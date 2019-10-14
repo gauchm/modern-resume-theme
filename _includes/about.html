@@ -1,6 +1,8 @@
 <div class="container intro-container">
   {%- if site.about_title -%}
     <h3>{{ site.about_title }}</h3>
+  {%- else -%}
+    <div class="row container"></div>
   {%- endif -%}
   <div class="row clearfix">
     {%- if site.about_profile_image -%}
