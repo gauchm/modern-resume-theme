@@ -7,6 +7,8 @@
   {%- seo title=false -%}
 
   <link rel="stylesheet" href="{{ '/assets/main.css' | relative_url }}">
-  <link rel="shortcut icon" type="image/x-icon" href="{{ site.favicon | relative_url }}">
+  {%- if site.favicon -%}
+    <link rel="shortcut icon" type="image/x-icon" href="{{ site.favicon | relative_url }}">
+  {%- endif -%}
   
 </head>
