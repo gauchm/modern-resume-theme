@@ -1,9 +1,13 @@
 <div class="container footer-container">
-  <p>
-    {{ site.name | escape }} -
-    <a href="mailto:{{ site.email }}" target="_blank">{{ site.email | escape }}</a>
+  <div id="footer-email">
+    {{ site.name | escape }} &ndash;&nbsp;
+    {%- if site.email -%}
+      {%- assign domain = site.email | split: "&#64;" | last -%}
+      {%- assign user = site.email | split: "&#64;" | first -%}
+      {{ user }}&#64;<div style="display:none;" id="spamblock">spamblock</div><i>{{ domain }}</i>
+    {%- endif -%}
     {%- if site.footer_show_references -%}
       &nbsp;- References on request
     {%- endif -%}
-  </p>
+  </div>
 </div>
