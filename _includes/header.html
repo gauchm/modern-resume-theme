@@ -86,9 +86,11 @@
       </ul>
 
       {%- if site.email -%}
-        <p>
-          Email: <a href="mailto:{{ site.email }}" target="_blank">{{ site.email | escape }}</a>
-        </p>
+        {%- assign domain = site.email | split: "&#64;" | last -%}
+        {%- assign user = site.email | split: "&#64;" | first -%}
+        <div>
+          Email: {{ user }}&#64;<div style="display:none;" id="spamblock"></div>{{ domain }}
+        </div>
       {%- endif -%}
       {%- if site.phone -%}
         <p>
