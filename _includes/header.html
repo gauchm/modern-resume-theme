@@ -88,9 +88,9 @@
       {%- if site.email -%}
         {%- assign domain = site.email | split: "&#64;" | last -%}
         {%- assign user = site.email | split: "&#64;" | first -%}
-        <p>
-          Email: {{ user }}&#64;<p style="display:none;" id="spamblock">spamblock</p>{{ domain }}
-        </p>
+        <div id="header-email">
+          Email: {{ user }}&#64;<div style="display:none;" id="spamblock">spamblock</div><i></i>{{ domain }}
+        </div>
       {%- endif -%}
       {%- if site.phone -%}
         <p>
