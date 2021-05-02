@@ -27,6 +27,13 @@
             </a>
           </li>
         {%- endif -%}
+        {%- if site.googlescholar_username -%}
+          <li>
+            <a target="_blank" href="https://scholar.google.ca/citations?user={{ site.googlescholar_username| escape }}" rel="noreferrer" class="button button--sacnite button--round-l">
+              <i class="fa fa-graduation-cap" title="Google Scholar link"></i>
+            </a>
+          </li>
+        {%- endif -%}
         {%- if site.github_username -%}
           <li>
             <a target="_blank" href="https://github.com/{{ site.github_username| cgi_escape | escape }}" rel="noreferrer" class="button button--sacnite button--round-l">
@@ -73,13 +80,6 @@
           <li>
             <a target="_blank" href="https://www.youtube.com/{{ site.youtube_username| cgi_escape | escape }}" rel="noreferrer" class="button button--sacnite button--round-l">
               <i class="fa fa-youtube-play" title="Youtube link"></i>
-            </a>
-          </li>
-        {%- endif -%}
-        {%- if site.googleplus_username -%}
-          <li>
-            <a target="_blank" href="https://plus.google.com/{{ site.googleplus_username| escape }}" rel="noreferrer" class="button button--sacnite button--round-l">
-              <i class="fa fa-google-plus" title="Google plus link"></i>
             </a>
           </li>
         {%- endif -%}
