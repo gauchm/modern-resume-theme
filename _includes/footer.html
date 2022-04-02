@@ -7,7 +7,7 @@
       {{ user }}&#64;<div style="display:none;" id="spamblock">spamblock</div><i>{{ domain }}</i>
     {%- endif -%}
     {%- if site.footer_show_references -%}
-      &nbsp;- References on request
+      &nbsp;- {{ site.references_title | default: "References on request" }}
     {%- endif -%}
   </div>
 </div>
