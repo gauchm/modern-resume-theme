@@ -27,13 +27,6 @@
             </a>
           </li>
         {%- endif -%}
-        {%- if site.googlescholar_username -%}
-          <li>
-            <a target="_blank" href="https://scholar.google.ca/citations?user={{ site.googlescholar_username| escape }}" rel="noreferrer" class="button button--sacnite button--round-l">
-              <i class="fa fa-graduation-cap" title="Google Scholar link"></i>
-            </a>
-          </li>
-        {%- endif -%}
         {%- if site.github_username -%}
           <li>
             <a target="_blank" href="https://github.com/{{ site.github_username| cgi_escape | escape }}" class="button button--sacnite button--round-l" rel="noreferrer">
@@ -98,12 +91,12 @@
           </li>
         {%- endif -%}
         {%- if site.googlescholar_username -%}
-          <li>
-            <a target="_blank" href="https://scholar.google.com/citations?user={{ site.googlescholar_username| escape }}" class="button button--sacnite button--round-l" rel="noreferrer">
-              <i class="fab fa-google" title="Google scholar link"></i>
-            </a>
-          </li>
-        {%- endif -%}
+        <li>
+          <a target="_blank" href="https://scholar.google.com/citations?user={{ site.googlescholar_username| escape }}" rel="noreferrer" class="button button--sacnite button--round-l">
+            <i class="fas fa-graduation-cap" title="Google Scholar link"></i>
+          </a>
+        </li>
+      {%- endif -%}
         {% for link in site.additional_links %}
           <li>
             {% include a.html href=link.url class="button button--sacnite button--round-l" %}
@@ -116,9 +109,9 @@
       {%- if site.email -%}
         {%- assign domain = site.email | split: "&#64;" | last -%}
         {%- assign user = site.email | split: "&#64;" | first -%}
-        <p id="header-email">
+        <div id="header-email">
 	  {{site.email_title | default: "Email" }}: {{ user }}&#64;<div style="display:none;" id="spamblock">spamblock</div><i></i>{{ domain }}
-        </p>
+        </div>
       {%- endif -%}
       {%- if site.phone -%}
         <p>

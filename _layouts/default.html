@@ -20,6 +20,11 @@
         {% for section in site.content %}
           <div class="container {{ section.layout }}-container">
             <h3 id="{{ section.title | slugify }}">{{ section.title }}</h3>
+            {%- if section.description -%}
+              <div class="clearfix layout layout-{{item.layout | default: 'left'}} border-{{item.border | default: 'no'}}">
+                <div class="content">{{ section.description | strip | markdownify }}</div>
+              </div>
+            {%- endif -%}
             {% include {{ section.layout | prepend: "section-" | append: ".html" }} content=section.content %}
           </div>
         {% endfor %}
