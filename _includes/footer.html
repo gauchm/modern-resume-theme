@@ -1,7 +1,8 @@
 <div class="container footer-container">
   <div id="footer-email">
-    {{ site.name | escape }} &ndash;&nbsp;
+    {{ site.name | escape }}
     {%- if site.email -%}
+      &ndash;&nbsp;
       {%- assign domain = site.email | split: "&#64;" | last -%}
       {%- assign user = site.email | split: "&#64;" | first -%}
       {{ user }}&#64;<div style="display:none;" id="spamblock">spamblock</div><i>{{ domain }}</i>
